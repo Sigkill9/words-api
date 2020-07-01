@@ -1,4 +1,4 @@
-# dictionary-api
+# words-api
 
 ### NOTES
 
@@ -67,4 +67,4 @@ the app runs on `localhost:3000`
 ```
 
 --------------------------------------------------------------------------------
-## dictionary-api
+## words-api
