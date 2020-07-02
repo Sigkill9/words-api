@@ -21,7 +21,9 @@ fastify.get('/search', async (request, reply) => {
   const term  = request.query.term;
 
   // requirement [nothing less than three letters]
-  if(!term || term.length < conf.limit.minSize){ return []; }
+  if (!term || term.length < conf.term.minSize){
+    reply.code(404).send();
+  };
 
   // call words service
   const result = await words.find(request.query.term, limit);
@@ -34,8 +36,8 @@ fastify.get('/search', async (request, reply) => {
       term:term,
       limit: limit
     }
-  }
-})
+ }
+});
 
 // Run the server!
 const start = async () => {
