@@ -6,7 +6,7 @@ let words;
 
 const init = function () {
   // read in words
-  let raw = fs.readFileSync(wordsPath, 'utf8')
+  let raw = fs.readFileSync(wordsPath, 'utf8');
 
   /**
    * performance tweak - removed (665) records
@@ -14,12 +14,10 @@ const init = function () {
    * since the requirement is to dis-allow it anyway.
    *
   */
-  words = raw.split('\n').filter(word => word.length >= 3)
+  words = raw.split('\n').filter(word => word.length >= 3);
 }
 
 async function find(prefix, limit){
-  if(!prefix) throw 'Prefix is required'
-
   const result = [];
   const len = prefix.length
   const prefixLower = prefix.toLowerCase()
