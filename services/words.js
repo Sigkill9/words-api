@@ -20,10 +20,6 @@ const init = function () {
 }
 
 async function find(prefix, limit){
-if(!prefix) {
-  return [];
-}
-
   const result = [];
   const len = prefix.length;
   const prefixLower = prefix.toLowerCase();
